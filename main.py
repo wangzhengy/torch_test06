@@ -62,9 +62,9 @@ if __name__ == '__main__':
     print('训练数据集长度为{}'.format(train_data_size))
     print('测试数据集长度为{}'.format(test_data_size))
 
-    train_dataloader = DataLoader(train_data,batch_size=256)
+    train_dataloader = DataLoader(train_data,batch_size=16,shuffle=True, pin_memory=True)
 
-    test_dataloader = DataLoader(test_data,batch_size=1)
+    test_dataloader = DataLoader(test_data,batch_size=1,shuffle=False, pin_memory=True)
 
     class Model(nn.Module):
         def __init__(self):
